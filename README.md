@@ -1,3 +1,10 @@
+
+### http endpoints:
+
+```bash
+\ produtos
+```
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="/image-logo.png" width="320" alt="Nest Logo" /></a>
 </p>
