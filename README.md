@@ -3,6 +3,8 @@
 </p>
 ## HTTP endpoints:
 
+> Teste usando o Postman
+
 ```bash
 \produtos
 ```
@@ -14,6 +16,7 @@
     "preco": "3000,00"       
 }
 \GET
+\GET\id << id exemplo a03778f41fb3039f747aa0b081129c51
 ```
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.

@@ -26,12 +26,17 @@ export class ProdutosController {
 
     @Get(':id')
     @Header('Content-Type', 'application/json')
-    getProduto(@Param('id') prodId: string,){
+    getProduto(@Param('id') prodId: string){
         return this.produtosService.getUmProduto(prodId); 
     }
 
     @Patch(':id')
-    updateProcuto(){
+    updateProcuto(
+        @Param('id') prodId: string, 
+        @Body('nome') prodNome: string, 
+        @Body('descricao') prodDesc: string,
+        @Body('preco') prodPreco: number
+        ){
 
     }
 }

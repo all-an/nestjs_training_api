@@ -19,12 +19,24 @@ export class ProdutosService{
         return [...this.produtos];
     }
 
-    getUmProduto(produtoId: string){
-        const produto = this.produtos.find(prod => prod.id === produtoId);
+    getUmProduto(produtoId: string){    
+        const produto = this.encontraProduto(produtoId)[0];
+        return { ...produto };
+    }
+
+    updateProduto(produtoId: string, nome: string, descricao: string, preco: number){
+        const [produto, index] = this.encontraProduto(produtoId);
+        
+        this.produtos[index] = {...produto}
+    }
+
+    private encontraProduto(id: string): [Produto, number]{
+        const produtoIndex = this.produtos.findIndex(prod => prod.id === id);
+        const produto = this.produtos[produtoIndex];
         if(!produto){
             throw new NotFoundException("Produto não encontrado");
         }
-        return { ...produto };
+        return [produto, produtoIndex];
     }
 }
 
