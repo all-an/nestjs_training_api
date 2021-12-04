@@ -6,6 +6,15 @@
 ```bash
 \produtos
 ```
+```json
+\POST
+{
+    "nome": "Pac-Man",
+    "descricao": "Jogo Raro",
+    "preco": "3000,00"       
+}
+\GET
+```
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
