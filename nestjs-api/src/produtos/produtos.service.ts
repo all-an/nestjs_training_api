@@ -26,8 +26,22 @@ export class ProdutosService{
 
     updateProduto(produtoId: string, nome: string, descricao: string, preco: number){
         const [produto, index] = this.encontraProduto(produtoId);
-        
-        this.produtos[index] = {...produto}
+        const atualizaProduto = {...produto};
+        if(nome){
+            atualizaProduto.nome = nome;
+        }
+        if(descricao){
+            atualizaProduto.descricao = descricao;
+        }
+        if(preco){
+            atualizaProduto.preco = preco;
+        }
+        this.produtos[index] = atualizaProduto;
+    }
+
+    deleteProduto(prodId: string){
+        const index = this.encontraProduto(prodId)[1];
+        this.produtos.splice(index, 1);
     }
 
     private encontraProduto(id: string): [Produto, number]{
@@ -38,6 +52,7 @@ export class ProdutosService{
         }
         return [produto, produtoIndex];
     }
+
 }
 
 

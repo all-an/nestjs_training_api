@@ -11,7 +11,7 @@
 ```json
 \POST
 {
-    "nome": "Pac-Man",
+    "nome": "Suikoden",
     "descricao": "Jogo Raro",
     "preco": "3000,00"       
 }
